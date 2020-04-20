@@ -5,10 +5,10 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import List from "./components/List";
 
-interface Props {
-  todos?: List;
+interface Props {}
+interface State {
+  todos: any[];
 }
-interface State {}
 
 class App extends React.Component<Props, State> {
   constructor(props: any) {
@@ -35,7 +35,7 @@ class App extends React.Component<Props, State> {
       <div>
         <Nav />
         <h1>TODOアプリ作ってみた</h1>
-        <List todos={this.props.todos} />
+        <List todos={this.state.todos} />
         <Form />
         <Footer />
       </div>
