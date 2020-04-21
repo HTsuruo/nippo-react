@@ -8,35 +8,39 @@ import List from "./components/List";
 interface Props {}
 interface State {
   todos: any[];
+  countTodo: number;
 }
 
 class App extends React.Component<Props, State> {
   constructor(props: any) {
     super(props);
+    const todos = [
+      {
+        id: 1,
+        title: "Hello, React!",
+        desc: "React始めました",
+        done: false,
+      },
+      {
+        id: 2,
+        title: "Hello, Redux!",
+        desc: "Reduxも始めました",
+        done: false,
+      },
+    ];
     this.state = {
-      todos: [
-        {
-          id: 1,
-          title: "Hello, React!",
-          desc: "React始めました",
-          done: false,
-        },
-        {
-          id: 2,
-          title: "Hello, Redux!",
-          desc: "Reduxも始めました",
-          done: false,
-        },
-      ],
+      todos: todos,
+      countTodo: todos.length + 1,
     };
   }
+
   render() {
     return (
       <div>
         <Nav />
         <h1>TODOアプリ作ってみた</h1>
-        <List todos={this.state.todos} />
         <Form />
+        <List todos={this.state.todos} />
         <Footer />
       </div>
     );
