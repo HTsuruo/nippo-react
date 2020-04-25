@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import "./App.css";
-import Form from "./components/Form";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
-import List from "./components/List";
+import React, { useState } from 'react'
+import './App.css'
+import Form from './components/Form'
+import Nav from './components/Nav'
+import Footer from './components/Footer'
+import List from './components/List'
 
 interface Props {}
 // interface State {
@@ -14,22 +14,22 @@ interface Props {}
 
 // function componentで記述する
 const App: React.FC<Props> = (props) => {
-  const [count, setCount] = useState(0);
-  const [inputVal, setinputVal] = useState("");
-  const [todos, settodos] = useState([""]);
+  const [count, setCount] = useState(0)
+  const [inputVal, setinputVal] = useState('')
+  const [todos, settodos] = useState([''])
 
   const todosNode = todos.map((todo, idx) => {
-    return <li key={idx}>{todo}</li>;
-  });
+    return <li key={idx}>{todo}</li>
+  })
 
   const onsubmit = () => {
-    settodos([inputVal]);
-    setinputVal("");
-  };
+    settodos([inputVal])
+    setinputVal('')
+  }
 
   const onchange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setinputVal(e.target.value);
-  };
+    setinputVal(e.target.value)
+  }
 
   return (
     <div>
@@ -46,8 +46,8 @@ const App: React.FC<Props> = (props) => {
       <button onClick={() => setCount(count + 1)}>プラス</button>
       <button onClick={() => setCount(count - 1)}>マイナス</button>
     </div>
-  );
-};
+  )
+}
 
 // class component
 // class App extends React.Component<Props, State> {
@@ -102,4 +102,4 @@ const App: React.FC<Props> = (props) => {
 //   }
 // }
 
-export default App;
+export default App

@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react'
 
 interface Props {
-  done: boolean;
-  id: number;
-  title: string;
-  desc: string;
+  done: boolean
+  id: number
+  title: string
+  desc: string
 }
 
 const Todo: React.FC<Props> = (props) => {
-  const className = "undone";
-  const link = props.done ? "もとに戻す" : "完了！";
+  const className = 'undone'
+  const link = props.done ? 'もとに戻す' : '完了！'
   return (
     <li className={className}>
       <span>{props.id}</span>
@@ -17,8 +17,8 @@ const Todo: React.FC<Props> = (props) => {
       <a href="#">{link}</a>
       <p>{props.desc}</p>
     </li>
-  );
-};
+  )
+}
 
 // class Todo extends React.Component<Props> {
 //   render() {
@@ -35,4 +35,4 @@ const Todo: React.FC<Props> = (props) => {
 //   }
 // }
 
-export default Todo;
+export default Todo

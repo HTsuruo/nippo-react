@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const Nav = () => {
-  return <div>これはなびです</div>;
-};
+  return <div>これはなびです</div>
+}
 
-export default Nav;
+export default Nav

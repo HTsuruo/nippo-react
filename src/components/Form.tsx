@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const Form = () => {
   return (
@@ -20,7 +20,7 @@ const Form = () => {
         <input type="submit" value="submit" />
       </div>
     </form>
-  );
-};
+  )
+}
 
-export default Form;
+export default Form
