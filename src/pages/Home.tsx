@@ -1,19 +1,26 @@
 import React from 'react'
-import Todo from './Todo'
+import Todo from '../components/Todo'
+import { type } from 'os'
 
-interface Props {
-  todos: any[]
+// interface Props {
+//   todos: any[]
+// }
+
+type Props = {}
+
+const Home: React.FC<Props> = (props) => {
+  return <div>ほげほげ</div>
 }
 
 // Function Componentで実装する場合.
-const List: React.FC<Props> = (props) => {
-  const todos = props.todos.map((todo) => <Todo key={todo.id} {...todo} />)
-  return (
-    <>
-      <ul>{todos}</ul>
-    </>
-  )
-}
+// const Home: React.FC<Props> = (props) => {
+//   const todos = props.todos.map((todo) => <Todo key={todo.id} {...todo} />)
+//   return (
+//     <>
+//       <ul>{todos}</ul>
+//     </>
+//   )
+// }
 
 // Class Componentで実装する場合.
 // interface Props {
@@ -34,4 +41,4 @@ const List: React.FC<Props> = (props) => {
 //   }
 // }
 
-export default List
+export default Home
