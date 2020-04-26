@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import Form from './components/Form'
 import Nav from './components/Nav'
@@ -15,36 +15,45 @@ interface Props {}
 // function componentで記述する
 const App: React.FC<Props> = (props) => {
   const [count, setCount] = useState(0)
-  const [inputVal, setinputVal] = useState('')
-  const [todos, settodos] = useState([''])
+  const [inputVal, setInputVal] = useState('')
+  const [todos, setTodos] = useState([''])
 
   const todosNode = todos.map((todo, idx) => {
     return <li key={idx}>{todo}</li>
   })
 
   const onsubmit = () => {
-    settodos([inputVal])
-    setinputVal('')
+    setTodos((prev) => prev.concat(inputVal))
+    setInputVal('')
   }
 
   const onchange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setinputVal(e.target.value)
+    setInputVal(e.target.value)
+  }
+
+  const increment = () => {
+    setCount(count + 1)
+  }
+
+  const decrement = () => {
+    setCount(count - 1)
   }
 
   return (
     <div>
       <h1>TODOアプリ作ってみた</h1>
-      <form action="" onSubmit={() => onsubmit()}>
-        <p>{inputVal}</p>
-        <input type="text" value={inputVal} onChange={(e) => onchange(e)} />
-        <input type="submit" value="送信" />
-      </form>
+      {/* <form action="" onSubmit={() => onsubmit()}> */}
+      <p>{inputVal}</p>
+      <input type="text" value={inputVal} onChange={(e) => onchange(e)} />
+      {/* <input type="submit" value="送信" /> */}
+      <button onClick={onsubmit}>送信ボタン</button>
+      {/*  </form> */}
       <ul>{todosNode}</ul>
 
       <h1>ただのカウンター</h1>
       <div>you clicked {count} times</div>
-      <button onClick={() => setCount(count + 1)}>プラス</button>
-      <button onClick={() => setCount(count - 1)}>マイナス</button>
+      <button onClick={() => increment()}>プラス</button>
+      <button onClick={() => decrement()}>マイナス</button>
     </div>
   )
 }
