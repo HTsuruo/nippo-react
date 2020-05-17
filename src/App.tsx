@@ -14,10 +14,13 @@ const App: React.FC<Props> = (props) => {
   return (
     <Router>
       <div>
-        <nav>
+        <Nav>
           <ul>
             <li>
               <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/signin">SignIn</Link>
             </li>
             <li>
               <Link to="/users">Users</Link>
@@ -26,7 +29,7 @@ const App: React.FC<Props> = (props) => {
               <Link to="/profile">Profile</Link>
             </li>
           </ul>
-        </nav>
+        </Nav>
         <Switch>
           <Route path="/users">
             <User />

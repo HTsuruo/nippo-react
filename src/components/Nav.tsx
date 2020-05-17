@@ -1,7 +1,13 @@
 import React from 'react'
+import Button from './atoms/Button'
 
-const Nav = () => {
-  return <div>これはなびです</div>
+const Nav: React.FC<{}> = () => {
+  return (
+    <div>
+      <p>これはなびです</p>
+      <Button></Button>
+    </div>
+  )
 }
 
 export default Nav
