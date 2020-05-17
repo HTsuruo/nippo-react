@@ -1,12 +1,12 @@
 import React from 'react'
-import Button from './atoms/Button'
+import SimpleButton from './atoms/Button'
 
 const Nav: React.FC<{}> = () => {
   return (
-    <div>
+    <nav>
       <p>これはなびです</p>
-      <Button></Button>
-    </div>
+      <SimpleButton></SimpleButton>
+    </nav>
   )
 }
 

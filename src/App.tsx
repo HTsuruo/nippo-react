@@ -7,13 +7,14 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import User from './pages/User'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
+import { Container } from '@material-ui/core'
 
 type Props = {}
 // function componentで記述する
 const App: React.FC<Props> = (props) => {
   return (
     <Router>
-      <div>
+      <Container>
         <Nav>
           <ul>
             <li>
@@ -41,7 +42,7 @@ const App: React.FC<Props> = (props) => {
             <Home />
           </Route>
         </Switch>
-      </div>
+      </Container>
     </Router>
   )
 }
